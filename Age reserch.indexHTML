@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <style>
+  html {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.girl {
+  color: deeppink;
+}
+.sub {
+  background-color: ghostwhite;
+  color: #05faf6;
+  border: 2px solid darkblue;
+  font-size: 17px;
+}
+#clueB {
+  color: #f3f2f2;
+}
+</style>
+</head>
+
+<body>
+<h1>Find the age of <a onclick="clueC()">Ray</a> in this mystirious document</h1>
+  <p class="girl">My name is Ray and my age is 
+    <input id="age" type="number">
+    <button onclick="anwser()" class="sub">Submit</button></p>
+  <p id="result"></p>
+  <hr>
+  <h2>Eatting paterns of cats</h2>
+  <p onclick="clueA()">Cats are obligate carnivores and do not do well on herbivore diets. In the wild they usually hunt smaller mammals to keep themselves nourished. Many cats find and chew small quantities of long grass, but this is not for its nutritional value per se. The eating of grass seems to stem from feline ancestry and has nothing to do with dietary requirements. It is believed that feline ancestors instead ate grass to purge intestinal parasites.[21]
+<br>
+Cats have no sweet taste receptors on their tongue and thus cannot taste sweet things at all. Cats mainly smell for their food, and what they taste for is amino acids instead. This may be a cause of cats being diagnosed with diabetes. The food that domestic cats get has a lot of carbohydrates in it, and a high sugar content cannot be efficiently processed by the digestive system of cats.[22]
+<br>
+Cats drink water by lapping the surface with their tongue. A fraction of a teaspoon of water is taken up with each lap. Although some desert cats are able to obtain much of their water needs through the flesh of their prey, most cats come to bodies of water to drink.[23]
+<br>
+Eating patterns are another indicator to understand behavior changes in domestic cats. Changes in typical eating patterns can be an early signal for possible physical or psychological health problems. [24]
+<br><p id="clueB"></p>
+A cat's eating pattern in a domestic setting is essential for the cat and owner bond to form. This happens because cats form attachments to households that regularly feed them.[25] Some cats ask for food dozens of times a day, including at night, with rubbing, pacing, meowing, or sometimes loud purring.</p>
+<script src="script.js">
+var clues = 0;
+var ritle = {name:"Ray",age:"37"};
+var Json = JSON.stringify(ritle);
+function clueA(){
+  clues = 1;
+  document.getElementById("clueB") .innerHTML = "Click the word of the first heading.That word is the opponet of Kylo Ren,the force awakens"
+}
+function clueC(){
+  if (clues === 1){
+    document.getElementById("result") .innerHTML = Json;
+  }
+}
+function anwser() {
+  let result = document.getElementById("age") .value
+  if (result === ritle.age) {
+    document.write("<h1 class=s >Correct</h1><audio autoplay><source src=mixkit-achievement-bell-600.wav </audio>")
+  } else {
+    document.write("<h1 class=f >Wrong anwser</h1><audio autoplay><source src=mixkit-negative-answer-lose-2032.wav </audio>")
+  }
+}
+</script>
+</body>
+
+</html>
